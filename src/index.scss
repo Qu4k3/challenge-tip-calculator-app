@@ -1,13 +1,15 @@
+@use 'styles/variables';
+
 body {
+  min-height: 100vh;
+  width: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: variables.$font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-weight: 700;
+  background-color: variables.$color-light-grayish-cyan;
+  color: variables.$color-dark-cyan;
+  display: grid;
+  place-items: center;
 }
