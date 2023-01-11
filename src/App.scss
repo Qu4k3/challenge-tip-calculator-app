@@ -50,7 +50,7 @@
           color: variables.$color-alert;
           display: none;
 
-          &.alert {
+          &.active {
             display: block;
           }
         }
@@ -78,7 +78,7 @@
             outline-color: variables.$color-primary;
           }
 
-          &.alert { 
+          &.error { 
             outline: 2px solid variables.$color-alert;            
           }
 
@@ -127,7 +127,7 @@
               cursor: pointer;
             }
 
-            &.selected {
+            &.active {
               background-color: variables.$color-primary;
               color: variables.$color-dark-cyan;
             }
