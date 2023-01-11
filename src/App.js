@@ -1,4 +1,5 @@
-import './App.scss';
+import "./App.scss";
+import { BsCurrencyDollar, BsPersonFill } from "react-icons/bs";
 
 function App() {
   return (
@@ -7,12 +8,17 @@ function App() {
         <div className="inputs">
           <div className="inputs--block">
             <span className="block--title">Bill</span>
-            <input
-              type="number"
-              name="bill-amount"
-              id="bill-amount"
-              placeholder="0"
-            />
+            <div>
+              <BsCurrencyDollar className="block--icon" />
+              <input
+                type="number"
+                name="bill-amount"
+                id="bill-amount"
+                placeholder="0"
+                min="0"
+                step="any"
+              />
+            </div>
           </div>
 
           <div className="inputs--block">
@@ -20,7 +26,7 @@ function App() {
             <div className="block--wrapper-btns">
               <button>5%</button>
               <button>10%</button>
-              <button>15%</button>
+              <button className="selected">15%</button>
               <button>25%</button>
               <button>50%</button>
               <input
@@ -28,18 +34,28 @@ function App() {
                 name="custom-tip"
                 id="custom-tip"
                 placeholder="Custom"
+                min="0"
+                step="any"
               />
             </div>
           </div>
 
           <div className="inputs--block">
-            <span className="block--title">Number of People</span>
-            <input
-              type="number"
-              name="people-number"
-              id="people-number"
-              placeholder="0"
-            />
+            <div>
+              <span className="block--title">Number of People</span>
+              <span className="block--alert">Can't be zero</span>
+            </div>
+            <div>
+              <BsPersonFill className="block--icon"/>
+              <input
+                type="number"
+                name="people-number"
+                id="people-number"
+                placeholder="0"
+                min="0"
+                step="any"
+              />
+            </div>
           </div>
         </div>
         <div className="outcome">

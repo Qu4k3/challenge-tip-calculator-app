@@ -1,5 +1,11 @@
 @use 'styles/variables';
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .splitter {
   background-color: variables.$color-white;
   border-radius: 25px;
@@ -20,14 +26,41 @@
       flex-direction: column;
       justify-content: space-between;
       margin: 15px auto;
+      gap: 40px;
 
       .inputs--block {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 10px;
 
         .block--title {
           color: variables.$color-dark-grayish-cyan;
+        }
+
+        > div {
+          position: relative;
+        }
+
+        > div:nth-child(1) {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .block--alert {
+          color: variables.$color-alert;
+          display: none;
+
+          &.alert {
+            display: block;
+          }
+        }
+
+        .block--icon {
+          position: absolute;
+          left: 15px;
+          top: 15px;
+          font-size: 1.1rem;
+          color: variables.$color-dark-grayish-cyan-alpha
         }
 
         input {
@@ -37,11 +70,39 @@
           text-align: right;
           border: none;
           border-radius: 5px;
+          padding: 10px 15px;
           background-color: variables.$color-very-light-grayish-cyan;
-          color: variables.$color-dark-grayish-cyan;
+          color: variables.$color-dark-cyan;
+
+          &:focus-visible {
+            outline-color: variables.$color-primary;
+          }
+
+          &.alert { 
+            outline: 2px solid variables.$color-alert;            
+          }
 
           &::placeholder {
-            color: variables.$color-dark-grayish-cyan;
+            color: variables.$color-dark-grayish-cyan ;
+          }
+
+          &#bill-amount,
+          &#people-number {
+            &::placeholder {
+              color: variables.$color-dark-grayish-cyan-alpha;
+            }
+          }
+
+          /* Chrome, Safari, Edge, Opera */
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
+          /* Firefox */
+          &[type=number] {
+            -moz-appearance: textfield;
           }
         }
 
@@ -57,7 +118,19 @@
             border-radius: 5px;
             background-color: variables.$color-dark-cyan;
             color: variables.$color-white;
-            padding: 5px;            
+            padding: 8px;  
+            transition: .3s; 
+            
+            &:hover {
+              background-color: variables.$color-light-grayish-cyan;
+              color: variables.$color-dark-cyan;
+              cursor: pointer;
+            }
+
+            &.selected {
+              background-color: variables.$color-primary;
+              color: variables.$color-dark-cyan;
+            }
           }
         }
       }
@@ -65,7 +138,7 @@
 
     .outcome {
       background-color: variables.$color-dark-cyan;
-      border-radius: 25px;
+      border-radius: 15px;
       padding: 40px;
       color: variables.$color-white;
       display: flex;
@@ -78,7 +151,8 @@
 
         > div {
           display: flex;
-          flex-direction: column;        
+          flex-direction: column;  
+          gap: 10px;      
         }
 
         .block--title {
@@ -98,7 +172,7 @@
       }
 
       button {
-        margin-top: 50px;
+        margin-top: auto;
         background-color: variables.$color-primary;
         opacity: .2;
         border: none;
@@ -108,12 +182,14 @@
         text-transform: uppercase;
         font-family: variables.$font-family;
         color: variables.$color-dark-cyan;
+        transition: .3s; 
 
         &.pressable {
           opacity: 1;
           cursor: pointer;
 
-          &:hover, &:active {
+          &:hover,
+          &:active {
             background-color: variables.$color-light-grayish-cyan;
             opacity: 1;
           }

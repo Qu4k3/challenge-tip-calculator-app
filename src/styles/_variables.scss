@@ -2,10 +2,12 @@
 $color-primary: hsl(172, 67%, 45%);
 $color-dark-cyan: hsl(183, 100%, 15%);
 $color-dark-grayish-cyan: hsl(186, 14%, 43%);
+$color-dark-grayish-cyan-alpha: hsl(186deg 14% 43% / 50%);
 $color-grayish-cyan: hsl(184, 14%, 56%);
 $color-light-grayish-cyan: hsl(185, 41%, 84%);
 $color-very-light-grayish-cyan: hsl(189, 41%, 97%);
 $color-white: hsl(0, 0%, 100%);
+$color-alert: #f87171;
 
 // defaults
 $font-family: 'Space Mono', monospace;
