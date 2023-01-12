@@ -14,8 +14,20 @@ function App() {
 
   const tipValues = [5, 10, 15, 25, 50]
 
+  const removeActiveClassBtnTip = () => {
+    const allBtns = Array.from(
+      document.getElementsByClassName('btn-tip')
+    )
+    
+    allBtns.forEach(element => {
+      element.classList.remove('active')
+    });
+  }
+
   const handleTipBtnClick = (event) => {
-    setTip(event.target.value);
+    removeActiveClassBtnTip()
+    event.currentTarget.classList.add('active')
+    setTip(event.target.value);    
     setCustomTip("")
   };
 
@@ -24,6 +36,7 @@ function App() {
   };
 
   const handleCustomTipChange = (event) => {
+    removeActiveClassBtnTip()
     setTip(event.target.value);
     setCustomTip(event.target.value);
   };
@@ -90,6 +103,7 @@ function App() {
                   <button
                     key={el}
                     value={el}
+                    className="btn-tip"
                     onClick={handleTipBtnClick}
                   >
                     {el}%
@@ -125,7 +139,7 @@ function App() {
                 min="0"
                 className={peopleNumberError ? "error" : ""}
                 value={peopleNumber}
-                step="any"
+                step="1"
                 onChange={handlePeopleNumberChange} // event => setPeopleNumber(event.target.value)
               />
             </div>
