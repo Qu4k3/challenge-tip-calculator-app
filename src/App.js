@@ -55,6 +55,7 @@ function App() {
   };
 
   const handleReset = () => {
+    removeActiveClassBtnTip()
     setTipAmount("0.00")
     setTotal("0.00")
     setBillAmount("")
@@ -161,7 +162,7 @@ function App() {
             <span className="block--amount">${total}</span>
           </div>
           <button
-            className="pressable"
+            className={billAmount || tip || peopleNumber ? "pressable" : ""}
             onClick={handleReset}
           >Reset</button>
         </div>
