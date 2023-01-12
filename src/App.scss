@@ -234,6 +234,18 @@
           }
         }
       }
+      .outcome {
+        padding: 30px;
+        gap: 20px;
+        .outcome--block { 
+          > div {
+            gap: 5px;      
+          } 
+          .block--amount {
+            font-size: 2rem;
+          }
+        }
+      }
     }
   }
 
