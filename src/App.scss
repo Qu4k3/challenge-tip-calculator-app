@@ -6,192 +6,195 @@
   box-sizing: border-box;
 }
 
-.splitter {
-  background-color: variables.$color-white;
-  border-radius: 25px;
-  padding: 30px;
-  margin: 20px;
-  max-width: 900px;
+body {
+  padding: 20px;
 
-  .wrapper {
-    display: flex;
-    gap: 50px;
+  .splitter {
+    background-color: variables.$color-white;
+    border-radius: 25px;
+    padding: 30px;
+    max-width: 900px;
 
-    > div {
-      flex: 0 1 50%;
-    }
-
-    .inputs {
+    .wrapper {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin: 15px auto;
-      gap: 40px;
+      gap: 50px;
 
-      .inputs--block {
+      > div {
+        flex: 0 1 50%;
+      }
+
+      .inputs {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        justify-content: space-between;
+        margin: 15px auto;
+        gap: 40px;
 
-        .block--title {
-          color: variables.$color-dark-grayish-cyan;
-        }
-
-        > div {
-          position: relative;
-        }
-
-        > div:nth-child(1) {
+        .inputs--block {
           display: flex;
-          justify-content: space-between;
-        }
+          flex-direction: column;
+          gap: 10px;
 
-        .block--alert {
-          color: variables.$color-alert;
-          display: none;
-
-          &.active {
-            display: block;
-          }
-        }
-
-        .block--icon {
-          position: absolute;
-          left: 15px;
-          top: 15px;
-          font-size: 1.1rem;
-          color: variables.$color-dark-grayish-cyan-alpha
-        }
-
-        input {
-          font-size: variables.$font-size;
-          font-family: variables.$font-family;
-          width: 100%;
-          text-align: right;
-          border: none;
-          border-radius: 5px;
-          padding: 10px 15px;
-          background-color: variables.$color-very-light-grayish-cyan;
-          color: variables.$color-dark-cyan;
-
-          &:focus-visible {
-            outline-color: variables.$color-primary;
+          .block--title {
+            color: variables.$color-dark-grayish-cyan;
           }
 
-          &.error { 
-            outline: 2px solid variables.$color-alert;            
+          > div {
+            position: relative;
           }
 
-          &::placeholder {
-            color: variables.$color-dark-grayish-cyan ;
+          > div:nth-child(1) {
+            display: flex;
+            justify-content: space-between;
           }
 
-          &#bill-amount,
-          &#people-number {
-            &::placeholder {
-              color: variables.$color-dark-grayish-cyan-alpha;
-            }
-          }
-
-          /* Chrome, Safari, Edge, Opera */
-          &::-webkit-outer-spin-button,
-          &::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-          }
-
-          /* Firefox */
-          &[type=number] {
-            -moz-appearance: textfield;
-          }
-        }
-
-        .block--wrapper-btns {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          grid-gap: 15px;
-
-          button {
-            font-size: variables.$font-size;
-            font-family: variables.$font-family;
-            border: none;
-            border-radius: 5px;
-            background-color: variables.$color-dark-cyan;
-            color: variables.$color-white;
-            padding: 8px;  
-            transition: .3s; 
-            
-            &:hover {
-              background-color: variables.$color-light-grayish-cyan;
-              color: variables.$color-dark-cyan;
-              cursor: pointer;
-            }
+          .block--alert {
+            color: variables.$color-alert;
+            display: none;
 
             &.active {
-              background-color: variables.$color-primary;
-              color: variables.$color-dark-cyan;
+              display: block;
+            }
+          }
+
+          .block--icon {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 1.1rem;
+            color: variables.$color-dark-grayish-cyan-alpha
+          }
+
+          input {
+            font-size: variables.$font-size;
+            font-family: variables.$font-family;
+            width: 100%;
+            text-align: right;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            background-color: variables.$color-very-light-grayish-cyan;
+            color: variables.$color-dark-cyan;
+
+            &:focus-visible {
+              outline-color: variables.$color-primary;
+            }
+
+            &.error { 
+              outline: 2px solid variables.$color-alert;            
+            }
+
+            &::placeholder {
+              color: variables.$color-dark-grayish-cyan ;
+            }
+
+            &#bill-amount,
+            &#people-number {
+              &::placeholder {
+                color: variables.$color-dark-grayish-cyan-alpha;
+              }
+            }
+
+            /* Chrome, Safari, Edge, Opera */
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+
+            /* Firefox */
+            &[type=number] {
+              -moz-appearance: textfield;
+            }
+          }
+
+          .block--wrapper-btns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 15px;
+
+            button {
+              font-size: variables.$font-size;
+              font-family: variables.$font-family;
+              border: none;
+              border-radius: 5px;
+              background-color: variables.$color-dark-cyan;
+              color: variables.$color-white;
+              padding: 8px;  
+              transition: .3s; 
+              
+              &:hover {
+                background-color: variables.$color-light-grayish-cyan;
+                color: variables.$color-dark-cyan;
+                cursor: pointer;
+              }
+
+              &.active {
+                background-color: variables.$color-primary;
+                color: variables.$color-dark-cyan;
+              }
             }
           }
         }
       }
-    }
 
-    .outcome {
-      background-color: variables.$color-dark-cyan;
-      border-radius: 15px;
-      padding: 40px;
-      color: variables.$color-white;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-
-      .outcome--block {
+      .outcome {
+        background-color: variables.$color-dark-cyan;
+        border-radius: 15px;
+        padding: 40px;
+        color: variables.$color-white;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 30px;
 
-        > div {
+        .outcome--block {
           display: flex;
-          flex-direction: column;  
-          gap: 10px;      
+          justify-content: space-between;
+
+          > div {
+            display: flex;
+            flex-direction: column;  
+            gap: 10px;      
+          }
+
+          .block--title {
+            white-space: nowrap;
+          }
+
+          .block--subtitle {
+            white-space: nowrap;
+            font-size: .8rem;
+            color: variables.$color-grayish-cyan;
+          }
+
+          .block--amount {
+            font-size: 3rem;
+            color: variables.$color-primary;
+          }
         }
 
-        .block--title {
-          white-space: nowrap;
-        }
+        button {
+          margin-top: auto;
+          background-color: variables.$color-primary;
+          opacity: .2;
+          border: none;
+          border-radius: 5px;
+          padding: 10px;
+          font-size: 20px;
+          text-transform: uppercase;
+          font-family: variables.$font-family;
+          color: variables.$color-dark-cyan;
+          transition: .3s; 
 
-        .block--subtitle {
-          white-space: nowrap;
-          font-size: .8rem;
-          color: variables.$color-grayish-cyan;
-        }
-
-        .block--amount {
-          font-size: 3rem;
-          color: variables.$color-primary;
-        }
-      }
-
-      button {
-        margin-top: auto;
-        background-color: variables.$color-primary;
-        opacity: .2;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        font-size: 20px;
-        text-transform: uppercase;
-        font-family: variables.$font-family;
-        color: variables.$color-dark-cyan;
-        transition: .3s; 
-
-        &.pressable {
-          opacity: 1;
-          cursor: pointer;
-
-          &:hover,
-          &:active {
-            background-color: variables.$color-light-grayish-cyan;
+          &.pressable {
             opacity: 1;
+            cursor: pointer;
+
+            &:hover,
+            &:active {
+              background-color: variables.$color-light-grayish-cyan;
+              opacity: 1;
+            }
           }
         }
       }
@@ -201,21 +204,23 @@
 
 @media screen and (max-width: variables.$medium) {
   
-  .splitter {
-    .wrapper {
-      flex-direction: column;
-      gap: 30px;
-
-      .inputs {
+  body {
+    .splitter {
+      .wrapper {
+        flex-direction: column;
         gap: 30px;
-        margin: auto;
-      }
 
-      .outcome {
-        gap: 10px;
+        .inputs {
+          gap: 30px;
+          margin: auto;
+        }
 
-        button {
-          margin-top: 10px;
+        .outcome {
+          gap: 10px;
+
+          button {
+            margin-top: 10px;
+          }
         }
       }
     }
@@ -225,24 +230,28 @@
 
 @media screen and (max-width: variables.$small) {
   
-  .splitter {
-    .wrapper {
-      .inputs {
-        .inputs--block {  
-          .block--wrapper-btns {
-            grid-template-columns: repeat(2, 1fr);
+  body {
+    .splitter {
+      padding: 20px;
+      .wrapper {
+        .inputs {
+          padding: 10px;
+          .inputs--block {  
+            .block--wrapper-btns {
+              grid-template-columns: repeat(2, 1fr);
+            }
           }
         }
-      }
-      .outcome {
-        padding: 30px;
-        gap: 20px;
-        .outcome--block { 
-          > div {
-            gap: 5px;      
-          } 
-          .block--amount {
-            font-size: 2rem;
+        .outcome {
+          padding: 20px;
+          gap: 20px;
+          .outcome--block { 
+            > div {
+              gap: 5px;      
+            } 
+            .block--amount {
+              font-size: 2rem;
+            }
           }
         }
       }
