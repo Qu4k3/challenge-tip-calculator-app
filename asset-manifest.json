@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/challenge-tip-calculator-app/static/css/main.e86053df.css",
-    "main.js": "/challenge-tip-calculator-app/static/js/main.5c7d9759.js",
+    "main.css": "/challenge-tip-calculator-app/static/css/main.d94e0ed7.css",
+    "main.js": "/challenge-tip-calculator-app/static/js/main.be06eac7.js",
     "index.html": "/challenge-tip-calculator-app/index.html",
-    "main.e86053df.css.map": "/challenge-tip-calculator-app/static/css/main.e86053df.css.map",
-    "main.5c7d9759.js.map": "/challenge-tip-calculator-app/static/js/main.5c7d9759.js.map"
+    "main.d94e0ed7.css.map": "/challenge-tip-calculator-app/static/css/main.d94e0ed7.css.map",
+    "main.be06eac7.js.map": "/challenge-tip-calculator-app/static/js/main.be06eac7.js.map"
   },
   "entrypoints": [
-    "static/css/main.e86053df.css",
-    "static/js/main.5c7d9759.js"
+    "static/css/main.d94e0ed7.css",
+    "static/js/main.be06eac7.js"
   ]
 }
