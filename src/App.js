@@ -85,6 +85,7 @@ function App() {
               <BsCurrencyDollar className="block--icon" />
               <input
                 type="number"
+                className="with-icon"
                 name="bill-amount"
                 id="bill-amount"
                 placeholder="0"
@@ -138,7 +139,7 @@ function App() {
                 id="people-number"
                 placeholder="0"
                 min="0"
-                className={peopleNumberError ? "error" : ""}
+                className={`with-icon${peopleNumberError ? " error" : ""}`}
                 value={peopleNumber}
                 step="1"
                 onChange={handlePeopleNumberChange} // event => setPeopleNumber(event.target.value)
