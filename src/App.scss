@@ -76,6 +76,10 @@ body {
             background-color: variables.$color-very-light-grayish-cyan;
             color: variables.$color-dark-cyan;
 
+            &.with-icon {
+              padding: 10px 15px 10px 40px;
+            }
+
             &:focus-visible {
               outline-color: variables.$color-primary;
             }
